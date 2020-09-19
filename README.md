@@ -1,5 +1,3 @@
-# supraft
+# SupraRaft: Yet Another Raft Protocol Implementation Based on Java.
 
-supra-raft, yet another raft protocol implementation based on java.
-
-This project is under development.
+:construction: This project is under development.
