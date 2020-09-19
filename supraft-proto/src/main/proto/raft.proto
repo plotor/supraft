@@ -6,6 +6,59 @@ option java_outer_classname = "Raft";
 
 package org.zhenchao.raft;
 
+message Endpoint {
+    required string ip = 1;
+    required int32 port = 2;
+}
+
+message ErrorInfo {
+    required int32 code = 1;
+    optional string desc = 2;
+}
+
+message Partner {
+    required Endpoint endpoint = 1;
+    required string groupId = 2;
+    optional int32 priority = 3; // election priority
+}
+
+enum PartnerRole {
+    LEADER = 1;
+    CANDIDATE = 2;
+    FOLLOWER = 3;
+}
+
 message LogEntry {
 
+}
+
+message RequestVoteRequest {
+    required Partner candidateId = 1;
+    required int64 term = 2;
+    required int64 lastLogTerm = 3;
+    required int64 lastLogIndex = 4;
+    required Partner targetPartner = 5;
+    optional bool preVote = 6 [default = false];
+}
+
+message RequestVoteResponse {
+    required int64 term = 1;
+    required bool granted = 2;
+    optional ErrorInfo errorInfo = 3;
+}
+
+message AppendEntriesRequest {
+    required Partner leaderId = 1;
+    required int64 term = 2;
+    required int64 prevLogTerm = 3;
+    required int64 prevLogIndex = 4;
+    repeated LogEntry entry = 5;
+    required int64 committedIndex = 6;
+}
+
+message AppendEntriesResponse {
+    required bool success = 1;
+    required int64 term = 2;
+    optional int64 lastLogIndex = 3;
+    optional ErrorInfo errorInfo = 4;
 }

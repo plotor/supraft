@@ -9,10 +9,45 @@ public final class Raft {
       com.google.protobuf.ExtensionRegistry registry) {
   }
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_zhenchao_raft_Endpoint_descriptor;
+  static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_zhenchao_raft_Endpoint_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_zhenchao_raft_ErrorInfo_descriptor;
+  static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_zhenchao_raft_ErrorInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_zhenchao_raft_Partner_descriptor;
+  static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_zhenchao_raft_Partner_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_org_zhenchao_raft_LogEntry_descriptor;
   static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_zhenchao_raft_LogEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_zhenchao_raft_RequestVoteRequest_descriptor;
+  static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_zhenchao_raft_RequestVoteRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_zhenchao_raft_RequestVoteResponse_descriptor;
+  static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_zhenchao_raft_RequestVoteResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_zhenchao_raft_AppendEntriesRequest_descriptor;
+  static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_zhenchao_raft_AppendEntriesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_zhenchao_raft_AppendEntriesResponse_descriptor;
+  static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_zhenchao_raft_AppendEntriesResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -22,8 +57,30 @@ public final class Raft {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\nraft.proto\022\021org.zhenchao.raft\"\n\n\010LogEn" +
-      "tryB\033\n\021org.zhenchao.raftB\004RaftP\001"
+      "\n\nraft.proto\022\021org.zhenchao.raft\"$\n\010Endpo" +
+      "int\022\n\n\002ip\030\001 \002(\t\022\014\n\004port\030\002 \002(\005\"\'\n\tErrorIn" +
+      "fo\022\014\n\004code\030\001 \002(\005\022\014\n\004desc\030\002 \001(\t\"[\n\007Partne" +
+      "r\022-\n\010endpoint\030\001 \002(\0132\033.org.zhenchao.raft." +
+      "Endpoint\022\017\n\007groupId\030\002 \002(\t\022\020\n\010priority\030\003 " +
+      "\001(\005\"\n\n\010LogEntry\"\311\001\n\022RequestVoteRequest\022/" +
+      "\n\013candidateId\030\001 \002(\0132\032.org.zhenchao.raft." +
+      "Partner\022\014\n\004term\030\002 \002(\003\022\023\n\013lastLogTerm\030\003 \002" +
+      "(\003\022\024\n\014lastLogIndex\030\004 \002(\003\0221\n\rtargetPartne" +
+      "r\030\005 \002(\0132\032.org.zhenchao.raft.Partner\022\026\n\007p",
+      "reVote\030\006 \001(\010:\005false\"e\n\023RequestVoteRespon" +
+      "se\022\014\n\004term\030\001 \002(\003\022\017\n\007granted\030\002 \002(\010\022/\n\terr" +
+      "orInfo\030\003 \001(\0132\034.org.zhenchao.raft.ErrorIn" +
+      "fo\"\301\001\n\024AppendEntriesRequest\022,\n\010leaderId\030" +
+      "\001 \002(\0132\032.org.zhenchao.raft.Partner\022\014\n\004ter" +
+      "m\030\002 \002(\003\022\023\n\013prevLogTerm\030\003 \002(\003\022\024\n\014prevLogI" +
+      "ndex\030\004 \002(\003\022*\n\005entry\030\005 \003(\0132\033.org.zhenchao" +
+      ".raft.LogEntry\022\026\n\016committedIndex\030\006 \002(\003\"}" +
+      "\n\025AppendEntriesResponse\022\017\n\007success\030\001 \002(\010" +
+      "\022\014\n\004term\030\002 \002(\003\022\024\n\014lastLogIndex\030\003 \001(\003\022/\n\t",
+      "errorInfo\030\004 \001(\0132\034.org.zhenchao.raft.Erro" +
+      "rInfo*6\n\013PartnerRole\022\n\n\006LEADER\020\001\022\r\n\tCAND" +
+      "IDATE\020\002\022\014\n\010FOLLOWER\020\003B\033\n\021org.zhenchao.ra" +
+      "ftB\004RaftP\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -37,12 +94,54 @@ public final class Raft {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_org_zhenchao_raft_LogEntry_descriptor =
+    internal_static_org_zhenchao_raft_Endpoint_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_org_zhenchao_raft_Endpoint_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_org_zhenchao_raft_Endpoint_descriptor,
+        new java.lang.String[] { "Ip", "Port", });
+    internal_static_org_zhenchao_raft_ErrorInfo_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_org_zhenchao_raft_ErrorInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_org_zhenchao_raft_ErrorInfo_descriptor,
+        new java.lang.String[] { "Code", "Desc", });
+    internal_static_org_zhenchao_raft_Partner_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_org_zhenchao_raft_Partner_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_org_zhenchao_raft_Partner_descriptor,
+        new java.lang.String[] { "Endpoint", "GroupId", "Priority", });
+    internal_static_org_zhenchao_raft_LogEntry_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_org_zhenchao_raft_LogEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_org_zhenchao_raft_LogEntry_descriptor,
         new java.lang.String[] { });
+    internal_static_org_zhenchao_raft_RequestVoteRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_org_zhenchao_raft_RequestVoteRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_org_zhenchao_raft_RequestVoteRequest_descriptor,
+        new java.lang.String[] { "CandidateId", "Term", "LastLogTerm", "LastLogIndex", "TargetPartner", "PreVote", });
+    internal_static_org_zhenchao_raft_RequestVoteResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_org_zhenchao_raft_RequestVoteResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_org_zhenchao_raft_RequestVoteResponse_descriptor,
+        new java.lang.String[] { "Term", "Granted", "ErrorInfo", });
+    internal_static_org_zhenchao_raft_AppendEntriesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_org_zhenchao_raft_AppendEntriesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_org_zhenchao_raft_AppendEntriesRequest_descriptor,
+        new java.lang.String[] { "LeaderId", "Term", "PrevLogTerm", "PrevLogIndex", "Entry", "CommittedIndex", });
+    internal_static_org_zhenchao_raft_AppendEntriesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_org_zhenchao_raft_AppendEntriesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_org_zhenchao_raft_AppendEntriesResponse_descriptor,
+        new java.lang.String[] { "Success", "Term", "LastLogIndex", "ErrorInfo", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
