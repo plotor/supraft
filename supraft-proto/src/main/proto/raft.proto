@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+option java_multiple_files = true;
+option java_package = "org.zhenchao.raft";
+option java_outer_classname = "Raft";
+
+package org.zhenchao.raft;
+
+message LogEntry {
+
+}
